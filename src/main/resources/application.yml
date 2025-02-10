@@ -1,0 +1,11 @@
+spring:
+  mvc:
+    static-path-pattern: static/**
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/student?useUnicode=true&characterEncoding=utf8
+    password: 123456
+    username: root
+server:
+  port: 8080
+

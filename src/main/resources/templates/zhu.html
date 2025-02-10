@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>晓晓口算</title>
+</head>
+<script src="/static/js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    function kai(){
+        location.href="/zhuan/zhuan"
+    }
+    function zhu(){
+        location.href="/";
+    }
+    function deng(){
+        location.href="/deng";
+    }
+</script>
+<body>
+    <center>
+        <h1>欢迎来到晓晓口算</h1>
+        <input type="button" value="开始口算" onclick="kai()" style="padding: 20px;width: 100px">
+        <input type="button" onclick="zhu()">
+        <input type="button" onclick="deng()">
+    </center>
+</body>
+</html>

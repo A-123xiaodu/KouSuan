@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>晓晓口算主页</title>
+</head>
+<link rel="stylesheet" href="/static/js/zhuanyeCss.css" type="text/css">
+<script src="/static/js/jquery-1.12.4.js"></script>
+<script src="/static/js/zhuyeJs.js"></script>
+<body>
+    <center>
+        <img src="/static/js/晓晓口算.jpg" style="height:250px;width:350px;"><br>
+        <span id="mubiao" style="display: none">目标：<span id="tishu"></span></span>
+        <input type="hidden" id="zhi">
+        <input type="hidden" id="zheng">
+        <span id="yingshen">请输入口算题数量：<input type="text" id="count" style="padding: 20px;width: 100px;height: 15px"></span>
+        <input type="button" value="开始" onclick="go()" id="go" style="width: 100px;padding: 20px">
+        <table border="0" style="display: none" id="xian">
+            <tr>
+                <td>时间(秒)：<span id="shijian"></span><span id="miao"></span></td>
+            </tr>
+            <tr>
+                <td>正确率：<span id="lv">-----</span></td>
+            <tr>
+                <td><span id="ti"></span></td>
+            </tr>
+            <tr>
+                <td>两数之间比大小：<span id="first"></span>&nbsp;&nbsp;<span id="fuhao" style="position: relative;bottom: 4px"></span>&nbsp;&nbsp;<span id="second"></span></td>
+            </tr>
+            <tr>
+                <td><input class="zan" type="button" value=">大于" onclick="xuan(this)" style="padding: 10px;width: 100px;">&nbsp;&nbsp;&nbsp;<input class="zan" type="button" value="<小于" onclick="xuan(this)" style="width: 100px;padding: 10px">&nbsp;&nbsp;&nbsp;<input class="zan" type="button" value="=等于" onclick="xuan(this)" style="width: 100px;padding: 10px"></td>
+            </tr>
+            <tr>
+                <td><input id="guan" type="button" value="暂停" onclick="zan()" style="padding: 3px;width: 50px"><td><input type="button" value="返回" onclick="fan()" style="padding: 5px;width: 50px"></td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
