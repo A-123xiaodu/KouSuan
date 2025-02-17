@@ -33,13 +33,13 @@ function go(){
                         $("body").setAttribute("onload",shi())
                     },
                     error:function(){
-                        alert("代码出错！")
+                        alert("服务器已关闭！")
                     }
                 })
             }
         },
         error:function (){
-            alert("代码出错！")
+            alert("服务器已关闭！")
         }
     })
 }
@@ -62,6 +62,7 @@ function fan(){
     $("#second").val("");
     $("#count").val("")
     $("#go").show();
+    $("#zhanJi").hide();
     zhi=-1;
     clearTimeout(shijian)
     $("body").removeAttribute("onload")
@@ -94,6 +95,7 @@ function xuan(obj){
                     $("#second").text(guo[1])
                     if (jieGuo[3]=="good") {
                         alert("您已完成所有的口算题！")
+                        $("#zhanJi").show();
                         $(".zan").hide();
                         $("#guan").hide();
                         $("#shijian").hide();
@@ -101,12 +103,12 @@ function xuan(obj){
                     }
                 },
                 error:function (){
-                    alert("代码出错！")
+                    alert("服务器已关闭！")
                 }
             })
         },
         error:function (){
-            alert("代码出错！")
+            alert("服务器已关闭！")
         }
     })
 }
@@ -122,6 +124,25 @@ function zan(){
         shijian=setTimeout("shi()",1000)
     }
 }
+function zhanJi(){
+    var zhengL = $("#lv").text();
+    var tS = $("#tishu").text();
+    var zhengG=$("#zheng").text();
+    $.ajax({
+        type:"get",
+        url:"/jisuan/print",
+        data:{"zhengL":zhengL,"tS":tS,"zhengG":zhengG},
+        dataType:"text",
+        success:function (bor){
+            alert("打印成功！")
+        },
+        error:function (){
+            alert("服务器已关闭！")
+        }
+
+    })
+}
+
 $(document).ready(function(){
     $(".zan").hover(
         function (){
